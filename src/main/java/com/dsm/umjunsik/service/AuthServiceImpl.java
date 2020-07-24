@@ -56,7 +56,7 @@ public class AuthServiceImpl implements AuthService {
         try {
             authenticationManager.authenticate(authToken);
         } catch (AuthenticationException e) {
-            throw new BadCredentialsException(e.getLocalizedMessage());
+            throw new BadCredentialsException(e.getMessage());
         }
     }
 
