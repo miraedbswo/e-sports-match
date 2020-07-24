@@ -38,7 +38,7 @@ public class User {
                 .id(id)
                 .password(encodedPassword)
                 .nickname(nickname)
-                .roles("ROLE_ANONYMOUS")
+                .roles("ROLE_USER")
                 .build();
     }
 

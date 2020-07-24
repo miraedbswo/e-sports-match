@@ -17,7 +17,7 @@ public class UserController {
     private final HighlightService highlightService;
     private final UserService userService;
 
-    @PostMapping("/duplicate")
+    @GetMapping("/duplicate")
     public CheckUserDuplicatedResponse duplicate(@RequestBody @Valid CheckUserDuplicatedRequest data) {
         return userService.isDuplicated(data);
     }
