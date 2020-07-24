@@ -54,9 +54,9 @@ public class MatchServiceImpl implements MatchService {
 
                     for (VoteStatistic vote : voteCounts) {
                         if (isRedTeam(match, vote)) {
-                            voteResponse.setRedTeamVoteCount(vote.getTeamVoteCount());
+                            voteResponse.setRedTeamVoteCount(vote.getVoteCount());
                         } else {
-                            voteResponse.setBlueTeamVoteCount(vote.getTeamVoteCount());
+                            voteResponse.setBlueTeamVoteCount(vote.getVoteCount());
                         }
                     }
 

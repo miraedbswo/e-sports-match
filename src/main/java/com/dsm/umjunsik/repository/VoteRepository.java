@@ -14,13 +14,10 @@ import java.util.List;
 @Repository
 public interface VoteRepository extends JpaRepository<Vote, Long> {
     Integer countByMatchAndTeam(Match match, Team team);
-    @Query("SELECT " +
-            "    new VoteStatistic(v.team, COUNT(v)) " +
-            "FROM " +
-            "    Vote v " +
-            "WHERE " +
-            "    v.match = :match " +
-            "GROUP BY " +
-            "    v.team ")
-    List<VoteStatistic> findVoteCount(@Param("name") Match match);
+
+    @Query("select v.team.id as teamId, count(v) as voteCount " +
+            "from Vote v " +
+            "where v.match = :match " +
+            "group by v.team")
+    List<VoteStatistic> findVoteCount(@Param("match") Match match);
 }
