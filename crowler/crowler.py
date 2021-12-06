@@ -24,10 +24,10 @@ url_base = 'https://qwer.gg{}'
 schedule_url = url_base.format('/schedules/{}-{:0>2}'.format(year, month))
 
 database = {
-    'host': os.getenv('DATABASE_URL', '127.0.0.1'),
-    'database': os.getenv('DATABASE', 'umjunsik'),
-    'user': os.getenv('DATABASE_USER', 'username'),
-    'password': os.getenv('DATABASE_PASSWORD', 'kim8932010'),
+    'host': os.getenv('DATABASE_URL'),
+    'database': os.getenv('DATABASE'),
+    'user': os.getenv('DATABASE_USER'),
+    'password': os.getenv('DATABASE_PASSWORD'),
     'port': os.getenv('DATABASE_PORT', 3306),
     'cursorclass': pymysql.cursors.DictCursor
 }
